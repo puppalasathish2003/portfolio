@@ -1,3 +1,4 @@
+import personal from "../data/personal";
 function Hero() {
   return (
     <section className="bg-slate-900 text-white min-h-screen pt-24">
@@ -19,18 +20,14 @@ function Hero() {
             <br />
 
             <span className="text-cyan-400 drop-shadow-lg">
-              P. Sathish
+              {personal.name}
             </span>
 
           </h1>
 
           <h2 className="text-4xl mt-6 font-bold text-gray-200">
 
-            Data Analyst
-
-            <br />
-
-            AI/ML Engineer
+            {personal.role}
 
           </h2>
 
@@ -45,13 +42,13 @@ function Hero() {
 
             <button className="bg-cyan-500 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400 hover:scale-105 transition duration-300">
 
-              Download Resume
+              {personal.buttons.resume}
 
             </button>
 
              <button className="border-2 border-cyan-500 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-500 hover:scale-105 transition duration-300">
 
-              View Projects
+              {personal.buttons.projects}
 
             </button>
 
