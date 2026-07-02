@@ -2,7 +2,9 @@ import skills from "../data/skills";
 
 function Skills() {
   return (
-    <section className="bg-slate-900 text-white py-20">
+    <section 
+    id="skills"
+    className="bg-slate-900 text-white py-20">
       <div className="max-w-7xl mx-auto px-8">
 
         <h2 className="text-5xl font-bold text-center text-cyan-400 mb-16">
@@ -13,7 +15,7 @@ function Skills() {
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-slate-800 rounded-2xl p-6 text-center hover:bg-cyan-500 hover:text-black transition duration-300 shadow-lg"
+              className="bg-slate-800 rounded-2xl p-6 text-center border border-slate-700 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300"
             >
               <h3 className="text-xl font-bold">
                 {skill.name}

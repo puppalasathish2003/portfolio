@@ -1,19 +1,22 @@
 const personal = {
   name: "P. Sathish",
-  role: "Data Analyst | AI/ML Engineer",
-  location: "Mahabubnagar, Telangana",
+
+  title: "Data Analyst",
+
+  subtitle: "AI/ML Engineer",
+
+  description:
+    "Aspiring Data Analyst and AI/ML Engineer passionate about transforming raw data into meaningful business insights using Python, SQL, Power BI and Machine Learning.",
+
   email: "puppalasathish2003@gmail.com",
 
-  social: {
-    github: "",
-    linkedin: "",
-    email: "puppalasathish2003@gmail.com",
-  },
+  phone: "+91 7386825168",
 
-  buttons: {
-    resume: "Download Resume",
-    projects: "View Projects",
-  },
+  location: "Mahabubnagar, Telangana",
+
+  github: "https://github.com/puppalasathish2003",
+
+  linkedin: "https://www.linkedin.com/in/sathishpuppala",
 };
 
 export default personal;

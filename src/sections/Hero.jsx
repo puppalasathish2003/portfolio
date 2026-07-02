@@ -1,79 +1,93 @@
 import personal from "../data/personal";
+import Button from "../components/Button";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 function Hero() {
   return (
-    <section className="bg-slate-900 text-white min-h-screen pt-24">
+    <section
+    id="home"
+    className="bg-slate-900 text-white min-h-screen pt-24 flex items-center">
+      <div className="max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 gap-14 items-center">
 
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between min-h-[90vh]">
-
-        {/* Left Side */}
-
-        <div className="w-1/2">
-
-          <p className="text-cyan-400 text-xl mb-4">
+        <motion.div
+          initial={{ opacity: 0, x: -70 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <p className="text-cyan-400 text-xl font-semibold mb-5">
             Hello 👋
           </p>
 
-          <h1 className="text-7xl font-extrabold leading-tight">
-
+          <h1 className="text-6xl lg:text-7xl font-black leading-tight">
             I'm
-
             <br />
-
-            <span className="text-cyan-400 drop-shadow-lg">
+            <span className="text-cyan-400">
               {personal.name}
             </span>
-
           </h1>
 
-          <h2 className="text-4xl mt-6 font-bold text-gray-200">
-
-            {personal.role}
-
+          <h2 className="text-3xl mt-7 font-bold">
+            {personal.title}
           </h2>
 
-          <p className="text-gray-400 mt-8 text-xl leading-9 max-w-xl">
+          <h3 className="text-xl text-gray-400 mt-2">
+            {personal.subtitle}
+          </h3>
 
-            Transforming data into meaningful business insights using
-            Python, SQL, Power BI and Machine Learning.
-
+          <p className="mt-8 text-gray-400 text-lg leading-8 max-w-xl">
+            {personal.description}
           </p>
 
-          <div className="mt-10 flex gap-5">
+          <div className="flex gap-5 mt-10">
 
-            <button className="bg-cyan-500 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-400 hover:scale-105 transition duration-300">
+            <Button primary href="/resume.pdf">
+              Download Resume
+            </Button>
 
-              {personal.buttons.resume}
-
-            </button>
-
-             <button className="border-2 border-cyan-500 px-8 py-3 rounded-xl font-semibold hover:bg-cyan-500 hover:scale-105 transition duration-300">
-
-              {personal.buttons.projects}
-
-            </button>
+            <Button href="#projects">
+              Projects
+            </Button>
 
           </div>
 
-        </div>
+          <div className="flex gap-6 mt-10 text-3xl">
 
-        {/* Right Side */}
+            <a
+              href={personal.github}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-cyan-400"
+            >
+              <FaGithub />
+            </a>
 
-        <div className="w-1/2 flex justify-center">
+            <a
+              href={personal.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-cyan-400"
+            >
+              <FaLinkedin />
+            </a>
 
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 70 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center"
+        >
           <img
-
             src="/profile.png"
-
             alt="Profile"
-
-            className="w-[450px] rounded-full border-4 border-cyan-400 shadow-[0_0_60px_rgba(6,182,212,0.45)] hover:scale-105 transition duration-500"
-
+            className="w-[420px] rounded-full border-4 border-cyan-400 shadow-[0_0_70px_rgba(6,182,212,0.5)]"
           />
-
-        </div>
+        </motion.div>
 
       </div>
-
     </section>
   );
 }
