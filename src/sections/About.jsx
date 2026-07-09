@@ -1,43 +1,97 @@
+import { motion } from "framer-motion";
+import {
+  FaUserGraduate,
+  FaBriefcase,
+  FaCertificate,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import personal from "../data/personal";
+
 function About() {
+  const cards = [
+    {
+      icon: <FaUserGraduate size={28} />,
+      title: "Education",
+      value: "B.Tech CSE (AI & ML)\nJNTUH University College of Engineering Wanaparthy\nCGPA: 7.30",
+    },
+    {
+      icon: <FaBriefcase size={28} />,
+      title: "Internships",
+      value: "CodeAlpha\nData Analytics Intern\nAI Intern",
+    },
+    {
+      icon: <FaCertificate size={28} />,
+      title: "Certifications",
+      value: "Cisco • Tata • Deloitte • Pixel Quest",
+    },
+    {
+      icon: <FaMapMarkerAlt size={28} />,
+      title: "Location",
+      value: "Mahabubnagar\nTelangana\nIndia",
+    },
+  ];
+
   return (
-    <section 
-    id="about" 
-    className="bg-slate-950 text-white py-20">
-      <div className="max-w-7xl mx-auto px-8">
+    <section
+      id="about"
+      className="bg-slate-950 text-white py-24"
+    >
+      <div className="max-w-[1350px] mx-auto px-12 lg:px-16">
 
-        <h2 className="text-5xl font-bold text-center text-cyan-400">
-          About Me
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
 
-        <p className="mt-8 text-center text-xl text-gray-400 max-w-4xl mx-auto leading-9">
-          I am an aspiring Data Analyst and AI/ML Engineer pursuing
-          B.Tech in Computer Science (AI & ML). I enjoy transforming
-          raw data into meaningful insights using Python, SQL,
-          Power BI and Machine Learning while building real-world
-          analytics and AI solutions.
-        </p>
+          <h2 className="text-6xl font-bold text-center text-cyan-400 mb-4">
+  About Me
+</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+<div className="flex justify-center mt-4 mb-10">
+  <p className="max-w-2xl mx-auto text-center text-gray-400 text-lg leading-8 mb-10">
+    Aspiring Data Analyst passionate about transforming
+    data into actionable insights using Python, SQL,
+    Power BI and Machine Learning.
+  </p>
+</div>
 
-          <div className="bg-slate-900 rounded-2xl p-8 text-center shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-4xl font-bold text-cyan-400">10+</h3>
-            <p className="mt-3 text-gray-300">Projects</p>
-          </div>
+        </motion.div>
 
-          <div className="bg-slate-900 rounded-2xl p-8 text-center shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-4xl font-bold text-cyan-400">9+</h3>
-            <p className="mt-3 text-gray-300">Certifications</p>
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 mt-12">
 
-          <div className="bg-slate-900 rounded-2xl p-8 text-center shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-4xl font-bold text-cyan-400">2</h3>
-            <p className="mt-3 text-gray-300">Internships</p>
-          </div>
+          {cards.map((card, index) => (
 
-          <div className="bg-slate-900 rounded-2xl p-8 text-center shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-4xl font-bold text-cyan-400">B.Tech</h3>
-            <p className="mt-3 text-gray-300">AI & ML</p>
-          </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              className="bg-slate-900 rounded-3xl p-8 min-h-[210px] border border-slate-800 hover:border-cyan-400 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,211,238,0.18)] transition-all duration-300 ease-in-out
+hover:-translate-y-2"
+            >
+
+              <div className="flex flex-col items-center mb-6">
+
+    <div className="text-cyan-400">
+        {card.icon}
+    </div>
+
+    <h3 className="text-2xl font-bold mt-3">
+        {card.title}
+    </h3>
+
+</div>
+
+              <p className="mt-4 whitespace-pre-line text-gray-300 leading-8 text-lg text-center">
+
+                {card.value}
+
+              </p>
+
+            </motion.div>
+
+          ))}
 
         </div>
 

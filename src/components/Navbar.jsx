@@ -1,35 +1,74 @@
-function Navbar() {
-  return (
-    <nav className="fixed top-0 left-0 w-full bg-slate-950 text-white shadow-lg z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+import { useState } from "react";
+import { Link } from "react-scroll";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-        <h1 className="text-3xl font-bold text-cyan-400">
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    "home",
+    "about",
+    "skills",
+    "experience",
+    "projects",
+    "contact",
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-10 py-5">
+
+        <h1 className="text-2xl font-black text-cyan-400 cursor-pointer">
           P. Sathish
         </h1>
 
-        <ul className="flex gap-8 text-lg font-medium">
-          <li className="cursor-pointer hover:text-cyan-400 transition">
-            Home
-          </li>
+        <ul className="hidden md:flex gap-8">
 
-          <li className="cursor-pointer hover:text-cyan-400 transition">
-            About
-          </li>
+          {navLinks.map((item) => (
+            <li key={item}>
+              <Link
+                to={item}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="capitalize cursor-pointer hover:text-cyan-400 transition"
+              >
+                {item}
+              </Link>
+            </li>
+          ))}
 
-          <li className="cursor-pointer hover:text-cyan-400 transition">
-            Skills
-          </li>
-
-          <li className="cursor-pointer hover:text-cyan-400 transition">
-            Projects
-          </li>
-
-          <li className="cursor-pointer hover:text-cyan-400 transition">
-            Contact
-          </li>
         </ul>
 
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-2xl"
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
       </div>
+
+      {menuOpen && (
+        <div className="md:hidden bg-slate-900">
+
+          {navLinks.map((item) => (
+            <Link
+              key={item}
+              to={item}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              onClick={() => setMenuOpen(false)}
+              className="block px-8 py-4 capitalize border-b border-slate-800 hover:bg-slate-800"
+            >
+              {item}
+            </Link>
+          ))}
+
+        </div>
+      )}
     </nav>
   );
 }

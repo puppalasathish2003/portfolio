@@ -7,19 +7,20 @@ const projects = [
     github: "https://github.com/puppalasathish2003",
   },
   {
-    title: "Online Retail Sales Dashboard",
+    title: "Retail Sales Analytics Dashboard",
     description:
-      "Developed an interactive Power BI dashboard for analyzing online retail sales and business insights.",
-    tech: "Power BI • Excel",
-    github: "https://github.com/puppalasathish2003",
+      "Developed an interactive Power BI dashboard to analyze retail sales performance, customer trends, and business KPIs using data visualization techniques.",
+    tech: "Power BI • Excel • DAX • Data Visualization",
+    github: "",
   },
   {
-    title: "Fake Currency Detection",
-    description:
-      "Developed a Machine Learning model to detect fake currency notes using image processing.",
-    tech: "Python • Machine Learning",
-    github: "https://github.com/puppalasathish2003",
-  },
+  title: "Business Insights Dashboard",
+  description:
+"Designed an interactive Power BI dashboard to analyze business performance, sales trends, customer insights, and KPIs during the Tata Data Visualisation Virtual Job Simulation (Forage).",
+  tech:
+"Power BI • Excel • DAX • Data Visualization",
+  github: "",
+},
 ];
 
 export default projects;

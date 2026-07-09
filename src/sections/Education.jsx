@@ -3,21 +3,29 @@ import education from "../data/education";
 function Education() {
   return (
     <section
-    id="education"
-    className="bg-slate-900 text-white py-20">
-      <div className="max-w-7xl mx-auto px-8">
+  id="education"
+  className="py-20 max-w-7xl mx-auto px-6 flex flex-col items-center"
+>
+      <div className="w-full max-w-7xl mx-auto">
 
-        <h2 className="text-5xl font-bold text-center text-cyan-400 mb-16">
-          Education
-        </h2>
+        <div className="w-full flex flex-col items-center mb-16">
+  <h2 className="text-6xl font-bold text-cyan-400 text-center">
+    Education
+  </h2>
+
+  <p className="mt-5 max-w-3xl text-center text-lg leading-8 text-gray-400">
+    My academic journey that built a strong foundation in Computer Science, Artificial Intelligence and Data Analytics.
+  </p>
+</div>
 
         <div className="grid md:grid-cols-2 gap-8">
 
           {education.map((item) => (
             <div
-              key={item.institute}
-              className="bg-slate-800 rounded-2xl p-8 shadow-lg hover:scale-105 transition duration-300"
-            >
+  key={item.institute}
+  style={{ padding: "24px 30px" }}
+  className="bg-slate-800 rounded-2xl shadow-lg hover:scale-105 transition duration-300"
+>
               <p className="text-cyan-400 font-semibold">
                 {item.year}
               </p>
